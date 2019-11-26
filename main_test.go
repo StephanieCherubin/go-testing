@@ -51,6 +51,6 @@ func TestOther(t *testing.T) {
 	fmt.Println("This shouldn't run with -run=calc")
 }
 
-func BenchmarkCalculate100(b) {
-
-}
+func BenchmarkCalculate100(b *testing.B)         { benchmarkCalculate(100, b) }
+func BenchmarkCalculateNegative100(b *testing.B) { benchmarkCalculate(-100, b) }
+func BenchmarkCalculateNegative1(b *testing.B)   { benchmarkCalculate(-1, b) }
